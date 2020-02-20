@@ -30,7 +30,6 @@ var answer = $("input[name='answer']:checked").val();
          type: "POST",
          crossDomain: true,
          data: "question:"+question+", answer:"+answer,
-         dataType: "json",
          success:function(result){
              alert(result);
          },
