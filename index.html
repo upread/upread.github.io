@@ -41,6 +41,7 @@ jQuery('#otvet').click(function() {
            data: "question="+question+"&answer="+answer,
            success:function(result){
                alert(result);
+               if (result=="Ответ верный!") reqQue(2);
            },
            error:function(xhr,status,error){
                alert(status);
