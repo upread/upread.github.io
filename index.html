@@ -13,7 +13,7 @@ Test
 <br />
 <input type="radio" name="answer" value="Игорь">
 <label>Игорь</label><br />
-<input type="radio"  name="ansver" value="Игнат">
+<input type="radio"  name="answer" value="Игнат">
 <label>Игнат</label></br />
 <input type="radio" name="answer" value="Михаил">
 <label>Михаил</label><br />
@@ -32,7 +32,7 @@ var answer = $("input[name='answer']:checked").val();
          data: "question:"+question+", answer:"+answer,
          dataType: "json",
          success:function(result){
-             alert(JSON.stringify(result));
+             alert(result);
          },
          error:function(xhr,status,error){
              alert(status);
