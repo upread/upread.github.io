@@ -4,7 +4,6 @@ text-align: center;
 #osnov{
   text-align: left;
       max-width: 400px;
-      box-shadow: 0 10px 45px rgba(0,0,0,.15);
       padding: 15px;
       margin: auto;
 }
@@ -67,3 +66,11 @@ height: 8px;
         margin-top: 20px;
         cursor: pointer;
       }
+.wrapper{
+      max-width: 640px;
+      margin: auto;
+      box-shadow: 0 10px 45px rgba(0,0,0,.15);
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
