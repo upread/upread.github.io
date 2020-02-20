@@ -11,20 +11,20 @@ Test
 <div id="osnov">
 <div id="question" data-value="1">Как звали одного из главных героев повести "Люди сузёмья" (автор Анатолий Петухов) - сына Василия Тимошкина?</div>
 <br />
-<input type="radio" name="answer" value="Игорь">
+<input type="radio" name="answer" value="1">
 <label>Игорь</label><br />
-<input type="radio"  name="answer" value="Игнат">
+<input type="radio"  name="answer" value="2">
 <label>Игнат</label></br />
-<input type="radio" name="answer" value="Михаил">
+<input type="radio" name="answer" value="3">
 <label>Михаил</label><br />
-<input type="radio" name="answer" value="Герман">
+<input type="radio" name="answer" value="4">
 <label>Герман</label><br />
 </div>
 <button id="otvet">Ответить</button>
 <script>
 jQuery('#otvet').click(function() {
 var question = jQuery('#question').data( "value" );
-var answer = $("input[name='answer']:checked").val();
+var answer = jQuery("input[name='answer']:checked").val();
   jQuery.ajax({
          url: "https://upread.ru/github/",
          type: "POST",
