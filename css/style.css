@@ -1,11 +1,11 @@
-.osnov{
+#osnov{
   text-align: left;
       max-width: 400px;
       box-shadow: 0 10px 45px rgba(0,0,0,.15);
       padding: 15px;
       margin: auto;
 }
-.osnov div {
+#osnov div {
 margin-top: 5px;
 }
 .perek{
