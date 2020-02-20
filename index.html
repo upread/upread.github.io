@@ -9,24 +9,34 @@ Test
 <body>
 <h1>Пример простого теста на JS</h1>
 <div id="osnov">
-<div id="question" data-value="1">Как звали одного из главных героев повести "Люди сузёмья" (автор Анатолий Петухов) - сына Василия Тимошкина?</div>
-<br />
-<input type="radio" name="answer" value="1">
-<label>Игорь</label><br />
-<input type="radio"  name="answer" value="2">
-<label>Игнат</label></br />
-<input type="radio" name="answer" value="3">
-<label>Михаил</label><br />
-<input type="radio" name="answer" value="4">
-<label>Герман</label><br />
 </div>
 <button id="otvet">Ответить</button>
 <script>
+//Запрашиваем вопрос
+function reqQue(question){
+jQuery.ajax({
+       url: "https://upread.ru/github/question.php",
+       type: "POST",
+       crossDomain: true,
+       data: "question="+question,
+       success:function(result){
+      jQuery('#osnov').html(result);
+       },
+       error:function(xhr,status,error){
+           alert(status);
+       }
+   });
+});
+}
+
+
+
+//проверяем ответ
 jQuery('#otvet').click(function() {
   var question = jQuery('#question').data( "value" );
   var answer = jQuery("input[name='answer']:checked").val();
     jQuery.ajax({
-           url: "https://upread.ru/github/",
+           url: "https://upread.ru/github/answer.php",
            type: "POST",
            crossDomain: true,
            data: "question="+question+"&answer="+answer,
@@ -40,8 +50,7 @@ jQuery('#otvet').click(function() {
 
 });
 
-
-//проверяем ответ
+reqQue(1);
 </script>
 </body>
 </html>
