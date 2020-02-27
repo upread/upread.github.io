@@ -63,7 +63,7 @@ reqQue();
 //генерируем новый и запрос на вопрос
 var keyUser = pass_gen(16);
 jQuery(document).ready(function() {
-if ((getCookie()=="") || (getCookie()=="undefined")) setCookie();
+if ((getCookie()=="") || (getCookie()==undefined)) setCookie();
 else keyUser = getCookie();
 jQuery('#keyUser').val(keyUser);
 reqQue();
