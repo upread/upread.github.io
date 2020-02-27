@@ -18,7 +18,7 @@ jQuery.ajax({
        data: "keyUser="+keyUser,
        success:function(result){
       jQuery('#osnov').html(result);
-      if (status=="Поздравляем! Вы правильно ответили на все вопросы!") jQuery("#otvet").css('display','none');
+      if (result=="Поздравляем! Вы правильно ответили на все вопросы!") jQuery("#otvet").css('display','none');
        },
        error:function(xhr,status,error){
            alert(status);
