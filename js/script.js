@@ -36,7 +36,7 @@ jQuery('#otvet').click(function() {
            data: "keyUser="+keyUser+"&answer="+answer,
            success:function(result){
                alert(result);
-               if (result=="Ответ верный!") reqQue();            
+               if (result=="Ответ верный!") reqQue();
            },
            error:function(xhr,status,error){
                alert(status);
@@ -44,6 +44,15 @@ jQuery('#otvet').click(function() {
        });
 
 });
+
+function setCookie(){
+    var cookieString = "keyUser=" + keyUser;
+    document.cookie = cookieString;
+}
+
+function getCookie(){
+ return document.cookie;
+}
 
 //меняем ключ
 jQuery('#EnterUser').click(function() {
@@ -54,6 +63,7 @@ reqQue();
 //генерируем новый и запрос на вопрос
 var keyUser = pass_gen(16);
 jQuery(document).ready(function() {
+if (getCookie()=="") setCookie();
 jQuery('#keyUser').val(keyUser);
 reqQue();
 });
