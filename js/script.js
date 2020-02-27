@@ -51,7 +51,7 @@ function setCookie(){
 }
 
 function getCookie(){
- return document.cookie;
+ return document.cookie.split("=")[1];
 }
 
 //меняем ключ
@@ -64,6 +64,7 @@ reqQue();
 var keyUser = pass_gen(16);
 jQuery(document).ready(function() {
 if (getCookie()=="") setCookie();
+else keyUser = getCookie();
 jQuery('#keyUser').val(keyUser);
 reqQue();
 });
