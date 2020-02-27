@@ -36,6 +36,7 @@ jQuery('#otvet').click(function() {
            success:function(result){
                alert(result);
                if (result=="Ответ верный!") reqQue();
+              else if (result=="Поздравляем! Вы правильно ответили на все вопросы!") jQuery("#otvet").css('display','none');
            },
            error:function(xhr,status,error){
                alert(status);
@@ -44,14 +45,14 @@ jQuery('#otvet').click(function() {
 
 });
 
-//старый ключ
+//меняем ключ
 jQuery('#EnterUser').click(function() {
   keyUser = jQuery('#keyUser').val();
 reqQue();
 });
 
+//генерируем новый и запрос на вопрос
 var keyUser = pass_gen(16);
-
 jQuery(document).ready(function() {
 jQuery('#keyUser').val(keyUser);
 reqQue();
