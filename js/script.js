@@ -21,6 +21,7 @@ jQuery.ajax({
        },
        error:function(xhr,status,error){
            alert(status);
+       if (status=="Поздравляем! Вы правильно ответили на все вопросы!") jQuery("#otvet").css('display','none');
        }
    });
 }
@@ -35,8 +36,7 @@ jQuery('#otvet').click(function() {
            data: "keyUser="+keyUser+"&answer="+answer,
            success:function(result){
                alert(result);
-               if (result=="Ответ верный!") reqQue();
-              else if (result=="Поздравляем! Вы правильно ответили на все вопросы!") jQuery("#otvet").css('display','none');
+               if (result=="Ответ верный!") reqQue();            
            },
            error:function(xhr,status,error){
                alert(status);
