@@ -46,7 +46,7 @@ jQuery('#otvet').click(function() {
 
 //старый ключ
 jQuery('#EnterUser').click(function() {
-  keyUser = jQuery('#keyUser').val(keyUser);
+  keyUser = jQuery('#keyUser').val();
 reqQue();
 });
 
